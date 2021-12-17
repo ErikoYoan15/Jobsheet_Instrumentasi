@@ -1,0 +1,16 @@
+false
+	   LXI H,FF
+	   MVI B,05
+	   MVI C,08
+
+UP:	   DAD H
+	   MOV A,H
+	   SUB B
+	   JC DOWN
+	   MOV H,A
+	   INR L
+
+DOWN:	   DCR C
+	   JNZ UP
+	   SHLD 8020
+	   HLT
